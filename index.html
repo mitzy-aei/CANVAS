@@ -1,0 +1,99 @@
+<html>
+<body>
+<canvas id="myCanvas" width="800" height="800" style="border:1px solid #c3c3c3;"></canvas>
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+// soft shadow helper
+function softShadow(){ ctx.shadowColor = "rgba(0,0,0,0.18)"; ctx.shadowBlur = 18; }
+function noShadow(){ ctx.shadowBlur = 0; }
+
+// background
+ctx.fillStyle = "#FFFFFF";
+ctx.fillRect(0,0,600,600);
+
+softShadow();
+ctx.fillStyle = "#F7EEF7";
+ctx.beginPath(); ctx.ellipse(300,520,220,45,0,0,Math.PI*2); ctx.fill();
+noShadow();
+
+// Kirby colors
+var pink = "#F6A7C1";
+var pinkShadow = "#E687A9";
+var blush = "#F28BB5";
+var shoe = "#D4175A";
+var shoeShadow = "#A01045";
+var eyeBlack = "#000000";
+var eyeBlue = "#1A75BB";
+
+// BODY (pastel shading)
+softShadow();
+ctx.beginPath();
+ctx.fillStyle = pink;
+ctx.ellipse(300,300,150,140,0,0,Math.PI*2);
+ctx.fill();
+noShadow();
+
+// body shading bottom
+ctx.fillStyle = pinkShadow;
+ctx.beginPath();
+ctx.ellipse(310,345,120,80,0,0,Math.PI*2);
+ctx.fill();
+
+// FEET
+softShadow();
+ctx.fillStyle = shoe;
+ctx.beginPath(); ctx.ellipse(220,440,80,55,0,0,Math.PI*2); ctx.fill();
+ctx.beginPath(); ctx.ellipse(380,440,80,55,0,0,Math.PI*2); ctx.fill();
+noShadow();
+
+// feet shading
+ctx.fillStyle = shoeShadow;
+ctx.beginPath(); ctx.ellipse(230,455,60,30,0,0,Math.PI*2); ctx.fill();
+ctx.beginPath(); ctx.ellipse(370,455,60,30,0,0,Math.PI*2); ctx.fill();
+
+// ARMS
+ctx.fillStyle = pink;
+ctx.beginPath(); ctx.ellipse(150,300,55,40,-0.5,0,Math.PI*2); ctx.fill();
+ctx.beginPath(); ctx.ellipse(450,300,55,40,0.5,0,Math.PI*2); ctx.fill();
+
+// BLUSH
+ctx.fillStyle = blush;
+ctx.beginPath(); ctx.ellipse(235,310,35,20,0,0,Math.PI*2); ctx.fill();
+ctx.beginPath(); ctx.ellipse(365,310,35,20,0,0,Math.PI*2); ctx.fill();
+
+// EYES WHITE
+softShadow();
+ctx.fillStyle = "#FFFFFF";
+ctx.beginPath(); ctx.ellipse(260,240,28,60,0,0,Math.PI*2); ctx.fill();
+ctx.beginPath(); ctx.ellipse(340,240,28,60,0,0,Math.PI*2); ctx.fill();
+noShadow();
+
+// BLACK PART
+ctx.fillStyle = eyeBlack;
+ctx.beginPath(); ctx.ellipse(260,255,18,40,0,0,Math.PI*2); ctx.fill();
+ctx.beginPath(); ctx.ellipse(340,255,18,40,0,0,Math.PI*2); ctx.fill();
+
+// BLUE PART
+ctx.fillStyle = eyeBlue;
+ctx.beginPath(); ctx.ellipse(260,265,12,25,0,0,Math.PI*2); ctx.fill();
+ctx.beginPath(); ctx.ellipse(340,265,12,25,0,0,Math.PI*2); ctx.fill();
+
+// HIGHLIGHTS
+ctx.fillStyle = "#FFFFFF";
+ctx.beginPath(); ctx.ellipse(255,230,8,12,0,0,Math.PI*2); ctx.fill();
+ctx.beginPath(); ctx.ellipse(335,230,8,12,0,0,Math.PI*2); ctx.fill();
+
+// SMALL lower highlight
+ctx.beginPath(); ctx.ellipse(265,280,5,8,0,0,Math.PI*2); ctx.fill();
+ctx.beginPath(); ctx.ellipse(345,280,5,8,0,0,Math.PI*2); ctx.fill();
+
+// MOUTH
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 4;
+ctx.beginPath(); ctx.arc(300,300,20,0.2*Math.PI,0.8*Math.PI); ctx.stroke();
+
+</script>
+</body>
+</html>
